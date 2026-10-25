@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKG AI Hub — Weekly AI News, Lab Matrix & Monthly Video</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header Navigation & Interactive Controls -->
+    <header class="border-b border-slate-800 bg-slate-950/90 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3 shrink-0">
+                <a href="#" class="text-xl sm:text-2xl font-black tracking-tight bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">tkg-ai-hub.com</a>
+                <span class="hidden sm:inline-block text-xs font-semibold bg-blue-500/10 text-blue-400 px-2.5 py-0.5 rounded-full border border-blue-500/20">Nov 1 Launch</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden xl:flex space-x-4 text-xs uppercase font-semibold text-slate-300">
+                <a href="#monthly-video" class="hover:text-blue-400 transition">Video</a>
+                <a href="#weekly-digest" class="hover:text-blue-400 transition">Digest</a>
+                <a href="#lab-matrix" class="hover:text-blue-400 transition">Lab Matrix</a>
+                <a href="#tool-radar" class="hover:text-blue-400 transition">Radar</a>
+                <a href="#papers" class="hover:text-blue-400 transition">Papers</a>
+                <a href="#recipes" class="hover:text-blue-400 transition">Recipes</a>
+                <a href="#pricing" class="hover:text-blue-400 transition">Benchmarks</a>
+                <a href="#glossary" class="hover:text-blue-400 transition">Glossary</a>
+            </nav>
+
+            <!-- Interactive Toggle Buttons -->
+            <div class="flex items-center space-x-2">
+                <button onclick="toggleReadTime()" id="btnReadTime" class="px-2.5 py-1 text-xs font-medium rounded-lg border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-slate-600 transition flex items-center gap-1.5">
+                    <i class="fa-regular fa-clock text-blue-400"></i>
+                    <span>Read Time</span>
+                </button>
+                <button onclick="toggleLevelTags()" id="btnLevelTags" class="px-2.5 py-1 text-xs font-medium rounded-lg border border-slate-700 bg-slate-900 text-slate-300 hover:text-white hover:border-slate-600 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-layer-group text-purple-400"></i>
+                    <span>Level Tags</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16 flex-grow">
+
+        <!-- SECTION: Monthly Summary Video (Embedded Studio Video Artifact) -->
+        <section id="monthly-video" class="relative rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/50 p-6 sm:p-8 border border-slate-800 shadow-2xl overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                            <i class="fa-solid fa-play-circle text-blue-400"></i> Featured Studio Video — October 2026
+                        </span>
+                        <span class="read-time-badge hidden inline-flex items-center gap-1 text-[11px] font-semibold bg-slate-800 text-blue-300 px-2.5 py-0.5 rounded-full border border-slate-700"><i class="fa-regular fa-clock"></i> 3 min watch</span>
+                        <span class="level-tag-badge hidden inline-flex items-center gap-1 text-[11px] font-semibold bg-purple-950/80 text-purple-300 px-2.5 py-0.5 rounded-full border border-purple-800/60"><i class="fa-solid fa-user-check"></i> General & Executive</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+                        AI Development Summary — October 2026
+                    </h1>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        A visual deep-dive highlighting October's major announcements: Gemini 4 Argon, GPT-6 Astra, Dots & Decisions API, Claude Duet, Meta Muse, and Kimi K3.1 Pro.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-2">
+                        <span><i class="fa-regular fa-calendar mr-1"></i> Oct 31, 2026</span>
+                        <span><i class="fa-solid fa-tag mr-1 text-blue-400"></i> Frontier & Agentic Systems</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="relative aspect-video rounded-xl overflow-hidden bg-slate-950 border border-slate-800 shadow-inner">
+                        <!-- Direct HTML5 Video Embed for Studio Artifact "AI Development Summary — October 2026" -->
+                        <video controls poster="thumbnail.jpg" class="w-full h-full object-cover">
+                            <source src="october-2026-summary.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE 1: Weekly AI Digest & Deep-Dive -->
+        <section id="weekly-digest" class="space-y-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-newspaper text-blue-400"></i> Scope 1: Weekly AI Digest (Oct Week 4)
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Simple breakdowns of October's top 6 major announcements.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="read-time-badge hidden text-xs font-medium text-blue-400 bg-blue-950/40 border border-blue-900 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock mr-1"></i> Total Section: ~3 min scan</span>
+                    <span class="level-tag-badge hidden text-xs font-medium text-purple-400 bg-purple-950/40 border border-purple-900 px-2.5 py-1 rounded-md"><i class="fa-solid fa-layer-group mr-1"></i> Level: Developer & Tech Lead</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Gemini 4 Argon -->
+                <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition space-y-3">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Google DeepMind</span>
+                        <div class="flex items-center gap-1">
+                            <span class="read-time-badge hidden text-[10px] text-blue-300 bg-slate-800 px-2 py-0.5 rounded">2 min read</span>
+                            <span class="level-tag-badge hidden text-[10px] text-purple-300 bg-purple-950 px-2 py-0.5 rounded">Developer</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Gemini 4 Argon</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>Simple Explanation:</strong> Google's top frontier model designed to handle hard reasoning, scientific problems, and long developer tasks with up to 1M token output.
+                    </p>
+                    <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">Read Official Post <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                </div>
+
+                <!-- Card 2: GPT-6 Astra -->
+                <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition space-y-3">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">OpenAI</span>
+                        <div class="flex items-center gap-1">
+                            <span class="read-time-badge hidden text-[10px] text-blue-300 bg-slate-800 px-2 py-0.5 rounded">2 min read</span>
+                            <span class="level-tag-badge hidden text-[10px] text-purple-300 bg-purple-950 px-2 py-0.5 rounded">Executive</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">GPT-6 Astra</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>Simple Explanation:</strong> OpenAI's highest-tier flagship model variant, built for multi-step reasoning, deep research, and multimodal intelligence.
+                    </p>
+                    <a href="https://openai.com/index/gpt-6-astra/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">Read Release Notes <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                </div>
+
+                <!-- Card 3: Dots (DOT) & Decisions API -->
+                <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition space-y-3">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">OpenAI DevDay</span>
+                        <div class="flex items-center gap-1">
+                            <span class="read-time-badge hidden text-[10px] text-blue-300 bg-slate-800 px-2 py-0.5 rounded">1.5 min read</span>
+                            <span class="level-tag-badge hidden text-[10px] text-purple-300 bg-purple-950 px-2 py-0.5 rounded">Developer</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Dots (DOT) & Decisions API</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>Simple Explanation:</strong> OpenAI's new interactive agent feature and dedicated Decisions API that helps multi-agent systems select optimal actions with high confidence.
+                    </p>
+                    <a href="https://openai.com/index/decisions-api/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">Read API Docs <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                </div>
+
+                <!-- Card 4: Claude Duet -->
+                <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition space-y-3">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Anthropic</span>
+                        <div class="flex items-center gap-1">
+                            <span class="read-time-badge hidden text-[10px] text-blue-300 bg-slate-800 px-2 py-0.5 rounded">1 min read</span>
+                            <span class="level-tag-badge hidden text-[10px] text-purple-300 bg-purple-950 px-2 py-0.5 rounded">General</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Claude Duet</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>Simple Explanation:</strong> A standalone proactive agent app that runs quietly in the background, checks work apps, briefs you each morning, and completes tasks while you are away.
+                    </p>
+                    <a href="https://claude.com/resources/articles/claude-duet" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">Read Announcement <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                </div>
+
+                <!-- Card 5: Meta Muse (Wonder & Spark) -->
+                <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition space-y-3">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Meta</span>
+                        <div class="flex items-center gap-1">
+                            <span class="read-time-badge hidden text-[10px] text-blue-300 bg-slate-800 px-2 py-0.5 rounded">2 min read</span>
+                            <span class="level-tag-badge hidden text-[10px] text-purple-300 bg-purple-950 px-2 py-0.5 rounded">Tech Lead</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Meta Muse (Wonder & Spark)</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>Simple Explanation:</strong> Meta's personal agent ecosystem and Claude 5.5-tier frontier models designed for long-term memory across phones, PCs, and smart glasses.
+                    </p>
+                    <a href="https://artificialanalysis.ai/articles/muse-wonder" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">Read Benchmark Analysis <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                </div>
+
+                <!-- Card 6: Moonshot Kimi K3.1 Pro -->
+                <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition space-y-3">
+                    <div class="flex justify-between items-start gap-2">
+                        <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Moonshot AI</span>
+                        <div class="flex items-center gap-1">
+                            <span class="read-time-badge hidden text-[10px] text-blue-300 bg-slate-800 px-2 py-0.5 rounded">2 min read</span>
+                            <span class="level-tag-badge hidden text-[10px] text-purple-300 bg-purple-950 px-2 py-0.5 rounded">Developer</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Kimi K3.1 Pro</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        <strong>Simple Explanation:</strong> A 3T-class frontier model targeting long coding tasks, 3D modeling, and financial analysis, with open weights scheduled for November release.
+                    </p>
+                    <a href="https://ai-tldr.dev/models/kimi-k3-1-pro/" target="_blank" class="text-xs text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1">Read Model Details <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MULTI-FACTOR AI LAB LEADERSHIP MATRIX -->
+        <section id="lab-matrix" class="space-y-4">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line text-blue-400"></i> AI Lab Leadership Matrix (Past, Present & Projected)
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Comparing top AI creators by User Base, Capital Scale, Computing Power, Benchmark Rank, and Trajectory.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="read-time-badge hidden text-xs font-medium text-blue-400 bg-blue-950/40 border border-blue-900 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock mr-1"></i> 3 min scan</span>
+                    <span class="level-tag-badge hidden text-xs font-medium text-purple-400 bg-purple-950/40 border border-purple-900 px-2.5 py-1 rounded-md"><i class="fa-solid fa-user-tie mr-1"></i> Level: Executive & Founder</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 shadow-lg">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-slate-900 uppercase text-slate-400 font-semibold border-b border-slate-800">
+                        <tr>
+                            <th class="py-3.5 px-4">AI Lab</th>
+                            <th class="py-3.5 px-4">User Base & Distribution</th>
+                            <th class="py-3.5 px-4">Capital & Infrastructure Scale</th>
+                            <th class="py-3.5 px-4">Benchmark Intelligence & Cost</th>
+                            <th class="py-3.5 px-4">Projected Trajectory (2027+)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/80">
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3.5 px-4 font-bold text-white">OpenAI</td>
+                            <td class="py-3.5 px-4 text-slate-200">1.2B Weekly Active Users; enterprise rollout (Uber ChatGPT Work)</td>
+                            <td class="py-3.5 px-4 text-slate-400">Offline frontier training environments & global data centers</td>
+                            <td class="py-3.5 px-4 text-purple-400 font-semibold">GPT-6 Astra ($1.99 / task); Decisions API</td>
+                            <td class="py-3.5 px-4 text-slate-300">Autonomous multi-agent ecosystems & decision routing</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3.5 px-4 font-bold text-white">Google DeepMind</td>
+                            <td class="py-3.5 px-4 text-slate-200">Global Search, Android & Workspace integration</td>
+                            <td class="py-3.5 px-4 text-slate-400">TorchTPU open-source PyTorch TPU backend; Alphabet capital</td>
+                            <td class="py-3.5 px-4 text-blue-400 font-semibold">Gemini 4 Argon ($1.99 / task; 1M output)</td>
+                            <td class="py-3.5 px-4 text-slate-300">Vertically integrated TPU compute & scientific discovery</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3.5 px-4 font-bold text-white">Anthropic</td>
+                            <td class="py-3.5 px-4 text-slate-200">Enterprise developer platform; GA on Google Cloud</td>
+                            <td class="py-3.5 px-4 text-slate-400">Formal verification pipelines & multi-cloud clusters</td>
+                            <td class="py-3.5 px-4 text-emerald-400 font-semibold">Claude Opus 5.5 (#1 Intelligence; $3.26 / task)</td>
+                            <td class="py-3.5 px-4 text-slate-300">Proactive background agents (Claude Duet)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3.5 px-4 font-bold text-white">Meta</td>
+                            <td class="py-3.5 px-4 text-slate-200">Billions across social platforms, phones & smart glasses</td>
+                            <td class="py-3.5 px-4 text-slate-400">Open-source infrastructure budget & on-device hardware</td>
+                            <td class="py-3.5 px-4 text-cyan-400 font-semibold">Muse Wonder Full & Muse Spark Open</td>
+                            <td class="py-3.5 px-4 text-slate-300">Cross-device personal agents (nanoMuse framework)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3.5 px-4 font-bold text-white">Moonshot AI</td>
+                            <td class="py-3.5 px-4 text-slate-200">Rapid open-weight developer adoption</td>
+                            <td class="py-3.5 px-4 text-slate-400">Highspeed inference optimizations (2-3x speedup)</td>
+                            <td class="py-3.5 px-4 text-rose-400 font-semibold">Kimi K3.1 Pro (#1 Open Weights; $0.72 / task)</td>
+                            <td class="py-3.5 px-4 text-slate-300">3T-class open weights for coding, 3D & finance</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3.5 px-4 font-bold text-white">DeepSeek</td>
+                            <td class="py-3.5 px-4 text-slate-200">High-volume global API throughput (155T tokens/day)</td>
+                            <td class="py-3.5 px-4 text-slate-400">$22M/day revenue at ~80% margin (81-day compute payback)</td>
+                            <td class="py-3.5 px-4 text-emerald-400 font-semibold">DeepSeek V4.1 Flash ($0.13 / task - Lowest Cost)</td>
+                            <td class="py-3.5 px-4 text-slate-300">High-efficiency open-source inference stacks (DeepInfer)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SCOPE 2: AI Model & Tool Radar -->
+        <section id="tool-radar" class="space-y-4">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-table-cells text-blue-400"></i> Scope 2: AI Model & Tool Radar
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Searchable directory of current AI frontier and open-weight models.</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="read-time-badge hidden text-xs text-blue-400"><i class="fa-regular fa-clock mr-1"></i> 2 min lookup</span>
+                    <span class="level-tag-badge hidden text-xs text-purple-400"><i class="fa-solid fa-code mr-1"></i> Developer</span>
+                    <input type="text" id="radarSearch" onkeyup="filterRadarTable()" placeholder="Filter models or creators..." class="bg-slate-900 text-xs border border-slate-800 rounded-lg px-3 py-2 w-full sm:w-64 focus:outline-none focus:border-blue-500 text-slate-200">
+                </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 shadow-lg">
+                <table class="w-full text-left text-xs text-slate-300" id="radarTable">
+                    <thead class="bg-slate-900 uppercase text-slate-400 font-semibold border-b border-slate-800">
+                        <tr>
+                            <th class="py-3.5 px-4">Model Name</th>
+                            <th class="py-3.5 px-4">Developer</th>
+                            <th class="py-3.5 px-4">Focus Area</th>
+                            <th class="py-3.5 px-4">Access Type</th>
+                            <th class="py-3.5 px-4">Release</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/80">
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">Gemini 4 Argon</td>
+                            <td class="py-3 px-4 text-slate-400">Google DeepMind</td>
+                            <td class="py-3 px-4">Frontier Reasoning & Science</td>
+                            <td class="py-3 px-4"><span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded">API / Enterprise</span></td>
+                            <td class="py-3 px-4 text-slate-400">Oct 2026</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">GPT-6 Astra</td>
+                            <td class="py-3 px-4 text-slate-400">OpenAI</td>
+                            <td class="py-3 px-4">Flagship Multimodal & Code</td>
+                            <td class="py-3 px-4"><span class="bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded">API / Cloud Garden</span></td>
+                            <td class="py-3 px-4 text-slate-400">Oct 2026</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">Claude Duet</td>
+                            <td class="py-3 px-4 text-slate-400">Anthropic</td>
+                            <td class="py-3 px-4">Proactive Background Agent</td>
+                            <td class="py-3 px-4"><span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded">Standalone App</span></td>
+                            <td class="py-3 px-4 text-slate-400">Oct 2026</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">Muse Wonder Full</td>
+                            <td class="py-3 px-4 text-slate-400">Meta</td>
+                            <td class="py-3 px-4">Claude 5.5-Tier Frontier Intelligence</td>
+                            <td class="py-3 px-4"><span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-2 py-0.5 rounded">Managed Cloud</span></td>
+                            <td class="py-3 px-4 text-slate-400">Oct 2026</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">DeepSeek DeepInfer</td>
+                            <td class="py-3 px-4 text-slate-400">DeepSeek AI</td>
+                            <td class="py-3 px-4">High-Speed Offline Engine</td>
+                            <td class="py-3 px-4"><span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded">Open Source Repo</span></td>
+                            <td class="py-3 px-4 text-slate-400">Oct 2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SCOPE 3: Paper Breakdowns (TL;DR Research) -->
+        <section id="papers" class="space-y-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-graduation-cap text-blue-400"></i> Scope 3: Paper Breakdowns (TL;DR Research)
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Bite-sized summaries of trending arXiv research papers.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="read-time-badge hidden text-xs font-medium text-blue-400 bg-blue-950/40 border border-blue-900 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock mr-1"></i> 3 min read</span>
+                    <span class="level-tag-badge hidden text-xs font-medium text-purple-400 bg-purple-950/40 border border-purple-900 px-2.5 py-1 rounded-md"><i class="fa-solid fa-microscope mr-1"></i> Level: Researcher</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Paper 1 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center justify-between text-[11px] text-slate-400">
+                        <span>Google Research</span>
+                        <span>arXiv:2610.14224</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-white">Harness²: Recursive Agent Harnessing</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Improves agent execution harnesses through recursive task-level refinement and continual harness-level learning, boosting performance across benchmarks without ground-truth verifiers.
+                    </p>
+                    <a href="https://huggingface.co/papers/2610.14224" target="_blank" class="text-xs text-blue-400 hover:underline inline-block font-medium">View Paper Entry →</a>
+                </div>
+
+                <!-- Paper 2 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center justify-between text-[11px] text-slate-400">
+                        <span>Tencent</span>
+                        <span>arXiv:2610.31329</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-white">WeVisOne-VL: Unified Visual Perception</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Unifies object-level detection, OCR, and pixel-level segmentation into a single vision-language model using structured token predictions and a lightweight decoder.
+                    </p>
+                    <a href="https://huggingface.co/papers/2610.31329" target="_blank" class="text-xs text-blue-400 hover:underline inline-block font-medium">View Paper Entry →</a>
+                </div>
+
+                <!-- Paper 3 -->
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center justify-between text-[11px] text-slate-400">
+                        <span>Zhejiang University</span>
+                        <span>arXiv:2610.08699</span>
+                    </div>
+                    <h3 class="text-sm font-bold text-white">nanoMuse: Open Personal Agent Framework</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Presents an open-source GPL-3.0 counterpart to Meta's Muse, enabling cross-device agent interactions, persistent memory files, and sentinel security controls.
+                    </p>
+                    <a href="https://huggingface.co/papers/2610.08699" target="_blank" class="text-xs text-blue-400 hover:underline inline-block font-medium">View Paper Entry →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE 4: Developer Recipes & Code Snippets -->
+        <section id="recipes" class="space-y-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-code text-blue-400"></i> Scope 4: Developer "Recipes" & Code Snippets
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Practical code gists for agent caching and CLI sandbox setup.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="read-time-badge hidden text-xs font-medium text-blue-400 bg-blue-950/40 border border-blue-900 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock mr-1"></i> 2 min implementation</span>
+                    <span class="level-tag-badge hidden text-xs font-medium text-purple-400 bg-purple-950/40 border border-purple-900 px-2.5 py-1 rounded-md"><i class="fa-solid fa-code mr-1"></i> Level: Developer</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Recipe 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-amber-400"></i> Setting Up 12-Hour Prompt Caching
+                    </h3>
+                    <p class="text-xs text-slate-400">Configures extended cache lifetime so background agents maintain low-cost cached inputs between idle turns.</p>
+                    <pre class="bg-slate-950 p-3 rounded-lg text-xs font-mono text-emerald-400 overflow-x-auto border border-slate-800"><code>import openai
+
+# Set 12-hour prompt cache TTL for background agent loops
+response = openai.chat.completions.create(
+    model="gpt-6.1-sol",
+    messages=[{"role": "system", "content": long_system_prompt}],
+    cache_control={"type": "ephemeral", "ttl_hours": 12}
+)</code></pre>
+                </div>
+
+                <!-- Recipe 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-terminal text-blue-400"></i> Claude Code CLI Sandbox Configuration
+                    </h3>
+                    <p class="text-xs text-slate-400">Configures auto-mode permissions and sandbox isolation level in Claude Code CLI.</p>
+                    <pre class="bg-slate-950 p-3 rounded-lg text-xs font-mono text-blue-300 overflow-x-auto border border-slate-800"><code># Tighten Bash sandbox permissions in claude-code v2.1.309
+claude config set sandbox.isolation strict
+claude config set auto_mode.permission_review_level guided</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE 5: AI API Pricing & Benchmark Index -->
+        <section id="pricing" class="space-y-4">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-chart-simple text-blue-400"></i> Scope 5: AI API Pricing & Benchmark Index
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Independent evaluation metrics sourced from Artificial Analysis benchmark indexes.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="read-time-badge hidden text-xs font-medium text-blue-400 bg-blue-950/40 border border-blue-900 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock mr-1"></i> 2 min scan</span>
+                    <span class="level-tag-badge hidden text-xs font-medium text-purple-400 bg-purple-950/40 border border-purple-900 px-2.5 py-1 rounded-md"><i class="fa-solid fa-laptop-code mr-1"></i> Level: Tech Lead</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950 shadow-lg">
+                <table class="w-full text-left text-xs text-slate-300">
+                    <thead class="bg-slate-900 uppercase text-slate-400 font-semibold border-b border-slate-800">
+                        <tr>
+                            <th class="py-3.5 px-4">Model Family</th>
+                            <th class="py-3.5 px-4">Intelligence Index Rank</th>
+                            <th class="py-3.5 px-4">Coding Agent Index</th>
+                            <th class="py-3.5 px-4">Est. Cost per Intelligence Task</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/80">
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">Claude Opus 5.5</td>
+                            <td class="py-3 px-4 text-emerald-400 font-semibold">#1 (Top Rank)</td>
+                            <td class="py-3 px-4 text-slate-300">Leader (Claude Code)</td>
+                            <td class="py-3 px-4 text-slate-400">$3.26 / task</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">Kimi K3.1 Pro</td>
+                            <td class="py-3 px-4 text-slate-300">#4 (Lead Open Weights)</td>
+                            <td class="py-3 px-4 text-slate-300">High (Kimi Code CLI)</td>
+                            <td class="py-3 px-4 text-slate-400">$0.72 / task</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">GPT-6 Astra</td>
+                            <td class="py-3 px-4 text-slate-300">Frontier Tier</td>
+                            <td class="py-3 px-4 text-slate-300">Top Tier (Codex)</td>
+                            <td class="py-3 px-4 text-slate-400">$1.99 / task</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">Gemini 4 Argon</td>
+                            <td class="py-3 px-4 text-slate-300">Frontier Tier</td>
+                            <td class="py-3 px-4 text-slate-300">Top Tier (Antigravity CLI)</td>
+                            <td class="py-3 px-4 text-slate-400">$1.99 / task</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/50">
+                            <td class="py-3 px-4 font-bold text-white">DeepSeek V4.1 Flash</td>
+                            <td class="py-3 px-4 text-slate-300">High Speed / Efficiency</td>
+                            <td class="py-3 px-4 text-slate-300">Competitive (DeepSeek Harness)</td>
+                            <td class="py-3 px-4 text-emerald-400 font-semibold">$0.13 / task (Lowest Cost)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SCOPE 6: Interactive AI Terms & Tech Glossary -->
+        <section id="glossary" class="space-y-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-book-bookmark text-blue-400"></i> Scope 6: Tech & AI Glossary
+                    </h2>
+                    <p class="text-xs text-slate-400 mt-1">Essential terminology for AI developers and engineering leads.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span class="read-time-badge hidden text-xs font-medium text-blue-400 bg-blue-950/40 border border-blue-900 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock mr-1"></i> 1 min lookup</span>
+                    <span class="level-tag-badge hidden text-xs font-medium text-purple-400 bg-purple-950/40 border border-purple-900 px-2.5 py-1 rounded-md"><i class="fa-solid fa-graduation-cap mr-1"></i> Level: General & Beginner</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 space-y-2">
+                    <h3 class="text-sm font-bold text-blue-400">Proactive Agents</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        AI systems (like <em>Claude Duet</em>) that execute background tasks, monitor apps, and brief users without waiting for a manual prompt.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 space-y-2">
+                    <h3 class="text-sm font-bold text-purple-400">Decision Models & APIs</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Specialized model routing mechanisms (like OpenAI's <em>Decisions API</em>) that evaluate action confidence and direct tasks across agent ensembles.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 space-y-2">
+                    <h3 class="text-sm font-bold text-emerald-400">12-Hour Prompt Caching</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        A server-side memory mechanism that preserves long prompt context across idle turns, dramatically lowering latency and API token costs for agents.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
+        <p>© 2026 tkg-ai-hub.com — Weekly AI Development Tracking & Monthly Video Digest.</p>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Toggle Read Time Badges
+        function toggleReadTime() {
+            const badges = document.querySelectorAll('.read-time-badge');
+            const btn = document.getElementById('btnReadTime');
+            let isShowing = false;
+            
+            badges.forEach(badge => {
+                badge.classList.toggle('hidden');
+                if (!badge.classList.contains('hidden')) isShowing = true;
+            });
+
+            if (isShowing) {
+                btn.classList.add('bg-blue-600', 'text-white', 'border-blue-500');
+                btn.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-700');
+            } else {
+                btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-500');
+                btn.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-700');
+            }
+        }
+
+        // Toggle Level Tags
+        function toggleLevelTags() {
+            const badges = document.querySelectorAll('.level-tag-badge');
+            const btn = document.getElementById('btnLevelTags');
+            let isShowing = false;
+
+            badges.forEach(badge => {
+                badge.classList.toggle('hidden');
+                if (!badge.classList.contains('hidden')) isShowing = true;
+            });
+
+            if (isShowing) {
+                btn.classList.add('bg-purple-600', 'text-white', 'border-purple-500');
+                btn.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-700');
+            } else {
+                btn.classList.remove('bg-purple-600', 'text-white', 'border-purple-500');
+                btn.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-700');
+            }
+        }
+
+        // Radar Table Live Filter
+        function filterRadarTable() {
+            var input = document.getElementById("radarSearch");
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById("radarTable");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var tdName = tr[i].getElementsByTagName("td");
+                var tdDev = tr[i].getElementsByTagName("td");
+                if (tdName || tdDev) {
+                    var txtName = tdName.textContent || tdName.innerText;
+                    var txtDev = tdDev.textContent || tdDev.innerText;
+                    if (txtName.toLowerCase().indexOf(filter) > -1 || txtDev.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
